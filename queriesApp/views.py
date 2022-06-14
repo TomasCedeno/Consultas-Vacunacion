@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import pandas as pd
 from sodapy import Socrata
 import dateutil
@@ -65,7 +65,6 @@ def query(request):
         "df": dfQuery.to_html(classes=("table", "table-striped"), justify='left')
     }
 
-    
     return render(request, 'index.html', context=table)
 
 
